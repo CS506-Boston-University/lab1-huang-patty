@@ -13,7 +13,6 @@ class X:
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
         # X cannot be simplified further, so return self
-        #return self
         pass
 
 
@@ -32,7 +31,6 @@ class Int:
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
         # Integer constants cannot be simplified further, so return self
-        #return self
         pass
 
 
@@ -91,8 +89,16 @@ class Sub:
         # TODO: Implement string representation for subtraction
         # Should handle parentheses similar to Mul class
         # Hint: Look at how Mul class handles parentheses
-        part1 = "( " + repr(self.p1) + " )" if isinstance(self.p1, (Add, Sub)) else repr(self.p1)
-        part2 = "( " + repr(self.p2) + " )" if isinstance(self.p2, (Add, Sub)) else repr(self.p2)
+        part1 = (
+            "( " + repr(self.p1) + " )"
+            if isinstance(self.p1, (Add, Sub))
+            else repr(self.p1)
+        )
+        part2 = (
+            "( " + repr(self.p2) + " )"
+            if isinstance(self.p2, (Add, Sub))
+            else repr(self.p2)
+        )
         return part1 + " - " + part2
 
     def evaluate(self, x_value):
@@ -116,8 +122,16 @@ class Div:
         # TODO: Implement string representation for division
         # Should handle parentheses similar to Mul class
         # Hint: Look at how Mul class handles parentheses
-        part1 = "( " + repr(self.p1) + " )" if isinstance(self.p1, (Add, Sub)) else repr(self.p1)
-        part2 = "( " + repr(self.p2) + " )" if isinstance(self.p2, (Add, Sub)) else repr(self.p2)
+        part1 = (
+            "( " + repr(self.p1) + " )"
+            if isinstance(self.p1, (Add, Sub))
+            else repr(self.p1)
+        )
+        part2 = (
+            "( " + repr(self.p2) + " )"
+            if isinstance(self.p2, (Add, Sub))
+            else repr(self.p2)
+        )
         return part1 + " / " + part2
 
     def evaluate(self, x_value):
